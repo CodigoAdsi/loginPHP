@@ -68,7 +68,7 @@
             para usarla en una sentencia SQL, tomando en cuenta el conjunto de
             caracteres actual de la conexión.
           */
-          $string = $this->mysqli->real_escape_string($string);
+          $string = $this->mysqli->real_escape_string($des);
 
           return $string;
         }

@@ -7,6 +7,7 @@ $('#login').click(function(){
   // Envio de datos mediante Ajax
   $.ajax({
     method: 'POST',
+    // Recuerda que la ruta se hace como si estuvieramos en el index y no en operaciones por esa razon no utilizamos ../ para ir a controller
     url: 'controller/loginController.php',
     // Recuerda el primer parametro es la variable de php y el segundo es el dato que enviamos
     data: {user_php: user, clave_php: clave},
@@ -26,14 +27,20 @@ $('#login').click(function(){
         Para usar sweetalert es muy sencillo, has de cuenta que haces un alert
         solo que esta ves enviaras 3 parametros separados por comas, el primero
         es el titulo de la alerta, el segundo es la descripcion y el tercero es el tipo de alerta
-        en el momento conosto tres tipos, entonces puedes variar entre success: Muestra animación de un check,
+        en el momento conozco tres tipos, entonces puedes variar entre success: Muestra animación de un check,
         warning: muestra icono de advertencia amarillo y error: muestra una animacion con una X muy chula :v
         */
         swal('Error', 'Por favor ingrese todos los campos', 'error');
+      }else if(res == 'error_2'){
+        // Recuerda que si no necesitas validar si es un email puedes eliminar el if de la linea 34
+        swal('Error', 'Por favor ingrese un email valido', 'warning');
+      }else if(res == 'error_3'){
+        swal('Error', 'El usuario y contraseña que ingresaste es incorrecto', 'error');
       }else{
-        // Redireccionamos a la página que diga corresponda el usuario 
-        console.log(res);
+        // Redireccionamos a la página que diga corresponda el usuario
+        window.location.href= res
       }
+
     }
   });
 
