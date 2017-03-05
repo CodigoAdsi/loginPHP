@@ -6,4 +6,8 @@ El login valida que el usuario y la clave sean correctas, agregue una animacion 
 
 Espero haber sido claro en el codigo, si tienes dudas o necesitas apoyo puedes escribirme a codigoadsi@gmail.com
 
+# Usuario de prueba
+user:  codigoadsi@gmail.com 
+clave: 123
+
 # Gracias :) 
