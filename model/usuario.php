@@ -131,6 +131,37 @@
       parent::cerrar();
     }
 
+    public function registroUsuario($name, $email, $clave)
+    {
+      parent::conectar();
+
+      $name  = parent::filtrar($name);
+      $email = parent::filtrar($email);
+      $clave = parent::filtrar($clave);
+
+
+      // validar que el correo no exito
+      $verificarCorreo = parent::verificarRegistros('select id from usuarios where email="'.$email.'" ');
+
+
+      if($verificarCorreo > 0){
+        echo 'error_3';
+      }else{
+
+        parent::query('insert into usuarios(nombre, email, clave, cargo) values("'.$name.'", "'.$email.'", MD5("'.$clave.'"), 2)');
+
+        session_start();
+
+        $_SESSION['nombre'] = $name;
+        $_SESSION['cargo']  = 2;
+
+        echo 'view/user/index.php';
+
+      }
+
+      parent::cerrar();
+    }
+
   }
 
 

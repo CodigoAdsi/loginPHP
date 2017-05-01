@@ -6,7 +6,6 @@
     es no mostrar otra ves el login sino redireccionarlo
     a su pagina principal mientras exista una sesion entonces
     creamos un archivo que controle el redireccionamiento
-
   */
 
   session_start();
@@ -91,6 +90,14 @@
                 <button type="button" class="btn btn-primary btn-block" name="button" id="login">Iniciar sesion</button>
               </div>
             </div>
+
+            <section class="text-accent center">
+              <div class="spacing-2"></div>
+              
+              <p>
+                No tienes una cuenta? <a href="registro.php"> Registrate!</a>
+              </p>
+            </section>
 
           </fieldset>
         </div>
