@@ -52,7 +52,7 @@
 
           <!-- Estructura del formulario -->
           <fieldset>
-
+            <form>
             <legend class="center">Login</legend>
 
             <!-- Caja de texto para usuario -->
@@ -98,7 +98,7 @@
                 No tienes una cuenta? <a href="registro.php"> Registrate!</a>
               </p>
             </section>
-
+            </form>
           </fieldset>
         </div>
       </div>
